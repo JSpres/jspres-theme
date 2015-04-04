@@ -7,6 +7,15 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
+@color-purple-light: #f5f1ff;
+@color-purple-1: #8C489F;
+@color-purple-2: #c3b5c9;
+@color-purple-3: #C3C3E5;
+@color-purple-dark: #421C52;
+@color-purple-darkest: #25102F;
+
+@background-color: @color-purple-light;
+
 @gray-base:              #000;
 @gray-darker:            lighten(@gray-base, 13.5%); // #222
 @gray-dark:              #7b8a8b;   // #333
@@ -14,7 +23,7 @@
 @gray-light:             #b4bcc2;   // #999
 @gray-lighter:           #ecf0f1; // #eee
 
-@brand-primary:         #2C3E50;
+@brand-primary:         @color-purple-1;
 @brand-success:         #18BC9C;
 @brand-info:            #3498DB;
 @brand-warning:         #F39C12;
@@ -26,9 +35,9 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               @color-purple-light;
 //** Global text color on `<body>`.
-@text-color:            @brand-primary;
+@text-color:            @color-purple-darkest;
 
 //** Global textual link color.
 @link-color:            @brand-success;
@@ -144,9 +153,9 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #fff;
-@btn-default-bg:                 @gray;
-@btn-default-border:             @btn-default-bg;
+@btn-default-color:              @color-purple-dark;
+@btn-default-bg:                 @color-purple-2;
+@btn-default-border:             darken(@color-purple-2, 12%);
 
 @btn-primary-color:              @btn-default-color;
 @btn-primary-bg:                 @brand-primary;
@@ -359,12 +368,12 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
-@navbar-default-color:             #777;
-@navbar-default-bg:                @brand-primary;
+@navbar-default-color:             @color-purple-dark;
+@navbar-default-bg:                @color-purple-2;
 @navbar-default-border:            transparent;
 
 // Navbar links
-@navbar-default-link-color:                #fff;
+@navbar-default-link-color:                @color-purple-dark;
 @navbar-default-link-hover-color:          @brand-success;
 @navbar-default-link-hover-bg:             transparent;
 @navbar-default-link-active-color:         #fff;
@@ -386,7 +395,7 @@
 // Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color:                      #fff;
-@navbar-inverse-bg:                         @brand-success;
+@navbar-inverse-bg:                         @color-purple-dark;
 @navbar-inverse-border:                     transparent;
 
 // Inverted navbar links
@@ -480,8 +489,9 @@
 //##
 
 @jumbotron-padding:              30px;
-@jumbotron-color:                inherit;
-@jumbotron-bg:                   @gray-lighter;
+@jumbotron-color:                @color-purple-dark;
+@jumbotron-bg:                   @color-purple-2;
+@jumbotron-border:               @color-purple-dark;
 @jumbotron-heading-color:        inherit;
 @jumbotron-font-size:            ceil((@font-size-base * 1.5));
 
