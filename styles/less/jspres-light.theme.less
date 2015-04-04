@@ -83,11 +83,11 @@ body {
 
 // Apply the mixin to the buttons
 .btn-default { background: @btn-default-bg; color: @btn-default-color; border-color: @btn-default-border; }
-.btn-primary { background: @btn-primary-bg; }
+.btn-primary { background: @btn-primary-bg; border-color: @btn-primary-border }
 .btn-success { background: @btn-success-bg; }
-.btn-info    { background: @btn-info-bg; }
+.btn-info    { background: @btn-info-bg; border-color: darken(@btn-info-bg, 13%); }
 .btn-warning { background: @btn-warning-bg; }
-.btn-danger  { background: @btn-danger-bg; }
+.btn-danger  { background: @btn-danger-bg; border-color: darken(@btn-danger-bg, 13%); }
 
 //
 // Labels
@@ -208,10 +208,10 @@ body {
 }
 
 // Apply the mixin to the alerts
-.alert-success    { .alert-styles(@alert-success-bg); }
-.alert-info       { .alert-styles(@alert-info-bg); }
-.alert-warning    { .alert-styles(@alert-warning-bg); }
-.alert-danger     { .alert-styles(@alert-danger-bg); }
+.alert-success    { .alert-styles(@alert-success-bg); color: @alert-success-text; }
+.alert-info       { .alert-styles(@alert-info-bg); color: @alert-info-text; }
+.alert-warning    { .alert-styles(@alert-warning-bg); color: @alert-warning-text; }
+.alert-danger     { .alert-styles(@alert-danger-bg); color: @alert-danger-text; }
 
 
 //
@@ -305,4 +305,16 @@ body {
   background: @jumbotron-bg;
   border: 0px solid @jumbotron-border;
   color: @jumbotron-color;
+}
+
+//
+// Carousel
+//
+
+.carousel {
+  .item {
+    img {
+      width: 100%;
+    }
+  }
 }
