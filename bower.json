@@ -1,0 +1,24 @@
+{
+  "name": "jspres-theme",
+  "version": "0.0.1",
+  "homepage": "https://github.com/JSpres/jspres-theme",
+  "authors": [
+    "Valentin Kirilov <val.kirilov@gmail.com>"
+  ],
+  "description": "The Bootstrap theme for JSpres project",
+  "keywords": [
+    "jspres"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}
