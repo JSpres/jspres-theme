@@ -10,7 +10,7 @@ The theme is under DEV and this version is not final
 ```
 bower install https://github.com/JSpres/jspres-theme.git
 ```
-- Or download the source of the repo - [Download ZIP](https://github.com/JSpres/jspres-theme/JSpres/jspres-theme/archive/master.zip)
+- Or download the source of the repo - [Download ZIP](https://github.com/JSpres/jspres-theme/archive/master.zip)
 - Add the theme to your files
 ```
 <!-- Bootstrap core CSS -->
