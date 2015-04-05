@@ -1,11 +1,19 @@
 
+.text-shadow(@shadow) {
+  -webkit-text-shadow:  @shadow;
+  -moz-text-shadow:     @shadow;
+  -ms-text-shadow:      @shadow;
+  -o-text-shadow:       @shadow;
+  text-shadow:          @shadow;
+}
+
 @import (less) "_fonts.less";
 @import (less) "_variables.less";
 
 body {
   background: @body-bg;
   padding-top: 70px;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 
   .electrolize;
   color: @text-color;
@@ -26,6 +34,7 @@ body {
 // Common styles
 .btn-default,
 .btn-primary,
+.btn-secondary,
 .btn-success,
 .btn-info,
 .btn-warning,
@@ -47,9 +56,10 @@ body {
 
 // Mixin for generating new styles
 .btn-styles(@btn-color: #555) {
-  #gradient > .vertical(@start-color: @btn-color; @end-color: darken(@btn-color, 12%));
-  .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootstrap/issues/10620
+  /* #gradient > .vertical(@start-color: @btn-color; @end-color: darken(@btn-color, 12%)); */
+  /* .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootstrap/issues/10620 */
   background-repeat: repeat-x;
+  background: @btn-color;
   border-color: darken(@btn-color, 14%);
 
   &:hover,
@@ -67,7 +77,8 @@ body {
   &.disabled,
   &:disabled,
   &[disabled] {
-    background-color: darken(@btn-color, 12%);
+    background-color: darken(@btn-color, 1%);
+    border-color: darken(@btn-color, 21%);
     background-image: none;
   }
 }
@@ -82,18 +93,27 @@ body {
 }
 
 // Apply the mixin to the buttons
-.btn-default { background: @btn-default-bg; color: @btn-default-color; border-color: @btn-default-border; }
-.btn-primary { background: @btn-primary-bg; border-color: @btn-primary-border }
-.btn-success { background: @btn-success-bg; }
-.btn-info    { background: @btn-info-bg; border-color: darken(@btn-info-bg, 13%); }
-.btn-warning { background: @btn-warning-bg; }
-.btn-danger  { background: @btn-danger-bg; border-color: darken(@btn-danger-bg, 13%); }
+.btn-default { .btn-styles(@btn-default-bg); color: @btn-default-color; border-color: @btn-default-border; }
+.btn-primary { .btn-styles(@btn-primary-bg); border-color: @btn-primary-border }
+.btn-secondary { .btn-styles(@btn-secondary-bg); color: @btn-secondary-color; border-color: @btn-secondary-border; }
+
+.btn-secondary:focus,
+.btn-secondary:hover,
+.btn-secondary.hover,
+.btn-secondary:active,
+.btn-secondary.active, { color: @btn-secondary-color; }
+
+.btn-success { .btn-styles(@btn-success-bg); }
+.btn-info    { .btn-styles(@btn-info-bg); border-color: darken(@btn-info-bg, 13%); }
+.btn-warning { .btn-styles(@btn-warning-bg); }
+.btn-danger  { .btn-styles(@btn-danger-bg); border-color: darken(@btn-danger-bg, 13%); }
 
 //
 // Labels
 //
 .label-default { background: @btn-default-bg; color: @btn-default-color; }
 .label-primary { background: @btn-primary-bg; }
+.label-secondary { background: @btn-secondary-bg; }
 .label-success { background: @btn-success-bg; }
 .label-info    { background: @btn-info-bg; }
 .label-warning { background: @btn-warning-bg; }
@@ -156,6 +176,7 @@ body {
 .navbar-inverse {
   background: @navbar-inverse-bg;
   color: @navbar-inverse-color;
+  .text-shadow(1px 1px 1px @color-purple-darkest);
 
   .navbar-nav > .open > a,
   .navbar-nav > .active > a {
@@ -166,7 +187,8 @@ body {
   .navbar-brand,
   .navbar-nav > li > a {
     color: @navbar-inverse-color !important;
-    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    .text-shadow(1px 1px 1px @color-purple-darkest);
+    /* text-shadow: 0 -1px 0 rgba(0,0,0,.25); */
   }
 }
 
@@ -239,6 +261,7 @@ body {
 
 // Apply the mixin to the progress bars
 .progress-bar            { .progress-bar-styles(@progress-bar-bg); }
+.progress-bar-secondary    { .progress-bar-styles(@progress-bar-secondary-bg); }
 .progress-bar-success    { .progress-bar-styles(@progress-bar-success-bg); }
 .progress-bar-info       { .progress-bar-styles(@progress-bar-info-bg); }
 .progress-bar-warning    { .progress-bar-styles(@progress-bar-warning-bg); }
@@ -288,11 +311,13 @@ body {
 
 // Apply the mixin to the panel headings only
 .panel-default > .panel-heading   { .panel-heading-styles(@panel-default-heading-bg); }
-.panel-primary > .panel-heading   { .panel-heading-styles(@panel-primary-heading-bg); }
-.panel-success > .panel-heading   { .panel-heading-styles(@panel-success-heading-bg); }
-.panel-info > .panel-heading      { .panel-heading-styles(@panel-info-heading-bg); }
-.panel-warning > .panel-heading   { .panel-heading-styles(@panel-warning-heading-bg); }
-.panel-danger > .panel-heading    { .panel-heading-styles(@panel-danger-heading-bg); }
+.panel-primary { border-color: transparent; }
+.panel-primary > .panel-heading   { .panel-heading-styles(@panel-primary-heading-bg); border-color: @panel-primary-border; }
+.panel-secondary > .panel-heading   { .panel-heading-styles(@panel-secondary-heading-bg); color: @panel-secondary-text; }
+.panel-success > .panel-heading   { .panel-heading-styles(@panel-success-heading-bg); color: @panel-success-text; }
+.panel-info > .panel-heading      { .panel-heading-styles(@panel-info-heading-bg); color: @panel-info-text; }
+.panel-warning > .panel-heading   { .panel-heading-styles(@panel-warning-heading-bg); color: @panel-warning-text; }
+.panel-danger > .panel-heading    { .panel-heading-styles(@panel-danger-heading-bg); color: @panel-danger-text; }
 
 
 //
@@ -300,7 +325,7 @@ body {
 // --------------------------------------------------
 
 .well {
-  #gradient > .vertical(@start-color: darken(@well-bg, 5%); @end-color: @well-bg);
+  #gradient > .vertical(@start-color: darken(@well-bg, 3%); @end-color: @well-bg);
   border-color: darken(@well-bg, 10%);
   @shadow: inset 0 1px 3px rgba(0,0,0,.05), 0 1px 0 rgba(255,255,255,.1);
   .box-shadow(@shadow);
@@ -325,5 +350,36 @@ body {
     img {
       width: 100%;
     }
+  }
+}
+
+footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: @color-purple-dark;
+  color: @color-purple-light;
+  .text-shadow(1px 1px 1px @color-purple-darkest);
+
+  ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+
+      a, 
+      a:hover, 
+      a:active {
+        color: @color-purple-2;
+      }
+    }
+  }
+
+  .brand {
+    color: @color-purple-1;
+    border-top: 1px solid darken(@color-purple-1, 13%);
+    .box-shadow(0px 1px 0px @color-purple-darkest inset);
+    .text-shadow(1px 1px 1px @color-purple-darkest);
+    padding-top: 15px;
+
   }
 }

@@ -15,9 +15,9 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen">
     <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css" media="screen">
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css" media="screen"> -->
 
-    <!-- Custom styles for this template -->
+    <!-- The theme styles -->
     <link rel="stylesheet" href="styles/css/jspres-light.theme.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -72,6 +72,7 @@
       <p>
         <button type="button" class="btn btn-lg btn-default">Default</button>
         <button type="button" class="btn btn-lg btn-primary">Primary</button>
+        <button type="button" class="btn btn-lg btn-secondary">Secondary</button>
         <button type="button" class="btn btn-lg btn-success">Success</button>
         <button type="button" class="btn btn-lg btn-info">Info</button>
         <button type="button" class="btn btn-lg btn-warning">Warning</button>
@@ -81,6 +82,7 @@
       <p>
         <button type="button" class="btn btn-default">Default</button>
         <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
         <button type="button" class="btn btn-success">Success</button>
         <button type="button" class="btn btn-info">Info</button>
         <button type="button" class="btn btn-warning">Warning</button>
@@ -90,6 +92,7 @@
       <p>
         <button type="button" class="btn btn-sm btn-default">Default</button>
         <button type="button" class="btn btn-sm btn-primary">Primary</button>
+        <button type="button" class="btn btn-sm btn-secondary">Secondary</button>
         <button type="button" class="btn btn-sm btn-success">Success</button>
         <button type="button" class="btn btn-sm btn-info">Info</button>
         <button type="button" class="btn btn-sm btn-warning">Warning</button>
@@ -97,8 +100,19 @@
         <button type="button" class="btn btn-sm btn-link">Link</button>
       </p>
       <p>
+        <button type="button" class="btn btn-sm btn-default disabled">Default</button>
+        <button type="button" class="btn btn-sm btn-primary disabled">Primary</button>
+        <button type="button" class="btn btn-sm btn-secondary disabled">Secondary</button>
+        <button type="button" class="btn btn-sm btn-success disabled">Success</button>
+        <button type="button" class="btn btn-sm btn-info disabled">Info</button>
+        <button type="button" class="btn btn-sm btn-warning disabled">Warning</button>
+        <button type="button" class="btn btn-sm btn-danger disabled">Danger</button>
+        <button type="button" class="btn btn-sm btn-link disabled">Link</button>
+      </p>
+      <p>
         <button type="button" class="btn btn-xs btn-default">Default</button>
         <button type="button" class="btn btn-xs btn-primary">Primary</button>
+        <button type="button" class="btn btn-xs btn-secondary">Secondary</button>
         <button type="button" class="btn btn-xs btn-success">Success</button>
         <button type="button" class="btn btn-xs btn-info">Info</button>
         <button type="button" class="btn btn-xs btn-warning">Warning</button>
@@ -263,6 +277,7 @@
       <h1>
         <span class="label label-default">Default</span>
         <span class="label label-primary">Primary</span>
+        <span class="label label-secondary">Secondary</span>
         <span class="label label-success">Success</span>
         <span class="label label-info">Info</span>
         <span class="label label-warning">Warning</span>
@@ -271,6 +286,7 @@
       <h2>
         <span class="label label-default">Default</span>
         <span class="label label-primary">Primary</span>
+        <span class="label label-secondary">Secondary</span>
         <span class="label label-success">Success</span>
         <span class="label label-info">Info</span>
         <span class="label label-warning">Warning</span>
@@ -279,6 +295,7 @@
       <h3>
         <span class="label label-default">Default</span>
         <span class="label label-primary">Primary</span>
+        <span class="label label-secondary">Secondary</span>
         <span class="label label-success">Success</span>
         <span class="label label-info">Info</span>
         <span class="label label-warning">Warning</span>
@@ -287,6 +304,7 @@
       <h4>
         <span class="label label-default">Default</span>
         <span class="label label-primary">Primary</span>
+        <span class="label label-secondary">Secondary</span>
         <span class="label label-success">Success</span>
         <span class="label label-info">Info</span>
         <span class="label label-warning">Warning</span>
@@ -295,6 +313,7 @@
       <h5>
         <span class="label label-default">Default</span>
         <span class="label label-primary">Primary</span>
+        <span class="label label-secondary">Secondary</span>
         <span class="label label-success">Success</span>
         <span class="label label-info">Info</span>
         <span class="label label-warning">Warning</span>
@@ -303,6 +322,7 @@
       <h6>
         <span class="label label-default">Default</span>
         <span class="label label-primary">Primary</span>
+        <span class="label label-secondary">Secondary</span>
         <span class="label label-success">Success</span>
         <span class="label label-info">Info</span>
         <span class="label label-warning">Warning</span>
@@ -311,6 +331,7 @@
       <p>
         <span class="label label-default">Default</span>
         <span class="label label-primary">Primary</span>
+        <span class="label label-secondary">Secondary</span>
         <span class="label label-success">Success</span>
         <span class="label label-info">Info</span>
         <span class="label label-warning">Warning</span>
@@ -490,6 +511,9 @@
         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"><span class="sr-only">60% Complete</span></div>
       </div>
       <div class="progress">
+        <div class="progress-bar progress-bar-secondary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 75%"><span class="sr-only">75% Complete (success)</span></div>
+      </div>
+      <div class="progress">
         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"><span class="sr-only">40% Complete (success)</span></div>
       </div>
       <div class="progress">
@@ -577,6 +601,24 @@
           </div>
         </div><!-- /.col-sm-4 -->
         <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-secondary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+        <div class="col-sm-4">
           <div class="panel panel-success">
             <div class="panel-heading">
               <h3 class="panel-title">Panel title</h3>
@@ -633,13 +675,13 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="images/img-01.jpg" class="img img-responsive" alt="First slide">
+            <img src="images/img-01.jpg" class="img img-responsive" alt="First slide" style="max-height: 400px;">
           </div>
           <div class="item">
-            <img src="images/img-03.jpg" class="img img-responsive" alt="Second slide">
+            <img src="images/img-03.jpg" class="img img-responsive" alt="Second slide" style="max-height: 400px;">
           </div>
           <div class="item">
-            <img src="images/img-05.jpg" class="img img-responsive" alt="Third slide">
+            <img src="images/img-05.jpg" class="img img-responsive" alt="Third slide" style="max-height: 400px;">
           </div>
         </div>
         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -654,8 +696,57 @@
 
     </div> <!-- /container -->
 
+    <br /><br /><br />
+
     <footer>
-      
+      <div class="container">
+        <div class="col-sm-2">
+          <br />
+          <img src="{{ STATIC_URL}}frontend/images/logo/logo.png" height="120px">
+        </div>
+        <div class="col-sm-2">
+          <h3>About</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Features</a></li>
+            <li><a href="/">Public</a></li>
+            <li><a href="/">Contacts</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <h3>Help</h3>
+          <ul>
+            <li><a href="/">FAQ</a></li>
+            <li><a href="/">Feedback</a></li>
+            <li><a href="/">Terms of use</a></li>
+            <li><a href="/">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <h3>Social</h3>
+          <ul>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Twitter</a></li>
+            <li><a href="">Google+</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <h3>Latest News</h3>
+          <ul>
+            <li><a href="">From Blog</a></li>
+            <li><a href="">From Blog</a></li>
+            <li><a href="">From Blog</a></li>
+            <li><a href="">From Blog</a></li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+        <br />
+        <div class="row text-center brand">
+          JSpres - impress the audience<br />
+          All rights reserved, &copy; 2012-2015
+        </div>
+      </div>
     </footer>
 
 
