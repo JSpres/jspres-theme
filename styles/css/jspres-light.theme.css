@@ -338,11 +338,6 @@ body {
 .navbar-inverse {
   background: #421c52;
   color: #ffffff;
-  -webkit-text-shadow: 1px 1px 1px #25102f;
-  -moz-text-shadow: 1px 1px 1px #25102f;
-  -ms-text-shadow: 1px 1px 1px #25102f;
-  -o-text-shadow: 1px 1px 1px #25102f;
-  text-shadow: 1px 1px 1px #25102f;
 }
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .active > a {
