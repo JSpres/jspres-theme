@@ -375,6 +375,7 @@
         <li role="presentation"><a href="#">Profile</a></li>
         <li role="presentation"><a href="#">Messages</a></li>
       </ul>
+      <br />
       <ul class="nav nav-pills" role="tablist">
         <li role="presentation" class="active"><a href="#">Home</a></li>
         <li role="presentation"><a href="#">Profile</a></li>
@@ -694,6 +695,48 @@
         </a>
       </div>
 
+      <div class="page-header">
+        <h1>Tabs</h1>
+      </div>
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Profile</a></li>
+          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Presentations</a></li>
+          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="home">
+            
+            <h1>Activity</h1>
+            <p>Styles are not ready.</p>
+            <p>This section will show the public activity of the user - presentations, comments, likes, everything that he do in our system. Here will be something like the facebook wall, but simple.</p>
+
+          </div>
+          <div role="tabpanel" class="tab-pane" id="profile">
+            
+            <h1>Private</h1>
+            <div class="alert alert-info">
+              <p>You have to be PRO/VIP/CONTRIBUTOR/SUPPORTER to have private presentations</p>
+            </div>
+            <p>Styles for this area are not ready</p>
+
+            <h1>Public</h1>
+            <p>Styles for this area are not ready</p>
+
+          </div>
+          <div role="tabpanel" class="tab-pane" id="settings">
+            <h1>Settings</h1>
+            <p>Here we should add form for editing the profile</p>
+            <p>Styles are not ready</p>
+          </div>
+        </div>
+
+      </div>
+
     </div> <!-- /container -->
 
     <br /><br /><br />
@@ -702,7 +745,7 @@
       <div class="container">
         <div class="col-sm-2">
           <br />
-          <img src="{{ STATIC_URL}}frontend/images/logo/logo.png" height="120px">
+          <img src="images/logo.png" height="120px">
         </div>
         <div class="col-sm-2">
           <h3>About</h3>
