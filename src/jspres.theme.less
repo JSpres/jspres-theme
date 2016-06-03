@@ -1,48 +1,15 @@
-
-.text-shadow(@shadow) {
-  -webkit-text-shadow:  @shadow;
-  -moz-text-shadow:     @shadow;
-  -ms-text-shadow:      @shadow;
-  -o-text-shadow:       @shadow;
-  text-shadow:          @shadow;
-}
-
-.border-radius-custom(@topleft: 0px; @topright: 0px; @bottomleft: 0; @bottomright: 0px) {
-  -webkit-border-top-left-radius:       @topleft;
-  -moz-border-radius-topleft:           @topleft;
-  border-top-left-radius:               @topleft;
-
-  -webkit-border-top-right-radius:      @topright;
-  -moz-border-radius-topright:          @topright;
-  border-top-right-radius:              @topright;
-
-  -webkit-border-bottom-right-radius:   @bottomright;
-  -moz-border-radius-bottomright:       @bottomright;
-  border-bottom-right-radius:           @bottomright;
-
-  -webkit-border-bottom-left-radius:    @bottomleft;
-  -moz-border-radius-bottomleft:        @bottomleft;
-  border-bottom-left-radius:            @bottomleft;
-}
-
-@import (less) "_fonts.less";
-@import (less) "_variables.less";
-
-body {
-  background: @body-bg;
-  padding-top: 70px;
-  padding-bottom: 0px;
-
-  .electrolize;
-  color: @text-color;
-}
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 
 //
 // Load core variables and mixins
 // --------------------------------------------------
 
-@import "_variables.less";
-@import "../../bower_components/bootstrap/less/mixins.less";
+@import "variables.less";
+@import "../bower_components/bootstrap/less/mixins.less";
 
 
 //
@@ -126,17 +93,6 @@ body {
 .btn-warning { .btn-styles(@btn-warning-bg); }
 .btn-danger  { .btn-styles(@btn-danger-bg); border-color: darken(@btn-danger-bg, 13%); }
 
-//
-// Labels
-//
-.label-default { background: @btn-default-bg; color: @btn-default-color; }
-.label-primary { background: @btn-primary-bg; }
-.label-secondary { background: @btn-secondary-bg; }
-.label-success { background: @btn-success-bg; }
-.label-info    { background: @btn-info-bg; }
-.label-warning { background: @btn-warning-bg; }
-.label-danger  { background: @btn-danger-bg; }
-
 
 
 //
@@ -172,29 +128,23 @@ body {
 
 // Default navbar
 .navbar-default {
-  background: @navbar-default-bg;
-  color: @navbar-default-color;
   border-radius: @navbar-border-radius;
   @shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.075);
-  .box-shadow(@shadow);
 
   .navbar-nav > .open > a,
   .navbar-nav > .active > a {
-    #gradient > .vertical(@start-color: darken(@navbar-default-link-active-bg, 5%); @end-color: darken(@navbar-default-link-active-bg, 2%));
-    .box-shadow(inset 0 3px 9px rgba(0,0,0,.075));
   }
 }
 .navbar-brand,
 .navbar-nav > li > a {
-  color: @navbar-default-color !important;
   text-shadow: 0 1px 0 rgba(255,255,255,.25);
 }
 
 // Inverted navbar
 .navbar-inverse {
-  background: @navbar-inverse-bg;
-  color: @navbar-inverse-color;
-
+  #gradient > .vertical(@start-color: lighten(@navbar-inverse-bg, 10%); @end-color: @navbar-inverse-bg);
+  .reset-filter(); // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered; see https://github.com/twbs/bootstrap/issues/10257
+  border-radius: @navbar-border-radius;
   .navbar-nav > .open > a,
   .navbar-nav > .active > a {
     #gradient > .vertical(@start-color: @navbar-inverse-link-active-bg; @end-color: lighten(@navbar-inverse-link-active-bg, 2.5%));
@@ -203,7 +153,6 @@ body {
 
   .navbar-brand,
   .navbar-nav > li > a {
-    color: @navbar-inverse-color !important;
     text-shadow: 0 -1px 0 rgba(0,0,0,.25);
   }
 }
@@ -213,15 +162,6 @@ body {
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   border-radius: 0;
-}
-
-.navbar .navbar-collapse {
-  text-align: center;
-}
-.navbar-center {
-  float: none;
-  display: inline-block;
-  vertical-align: top;
 }
 
 // Fix active state of dropdown items in collapsed mode
@@ -236,57 +176,6 @@ body {
   }
 }
 
-//
-// Navs
-//
-
-.nav {
-  li {
-    a {
-      color: @navbar-default-link-color;
-
-      &:hover {
-        background: @nav-link-hover-bg;
-        color: @navbar-default-link-color;
-        border-color: @nav-tabs-border-color;
-      }
-    }
-  }
-
-  li.active,
-  li:active,
-  li:focus {
-    a,
-    a:focus {
-      color: @nav-link-active-color;
-      border-color: @nav-tabs-border-color;
-      border-bottom-color: transparent;
-    }
-  }
-}
-
-.nav.nav-tabs {
-  border-color: @nav-tabs-border-color;
-}
-
-.nav.nav-pills {
-  li.active {
-    a {
-      color: @nav-pills-active-color;
-      background: @nav-pills-active-bg;
-    }
-  }
-}
-
-.tab-content {
-  background: #ffffff;
-  border: 1px solid @nav-tabs-border-color;
-
-  padding: @nav-link-padding;
-  .border-radius-custom(@bottomleft: @nav-pills-border-radius; @bottomright: @nav-pills-border-radius);
-
-  border-top: none;
-}
 
 //
 // Alerts
@@ -306,10 +195,10 @@ body {
 }
 
 // Apply the mixin to the alerts
-.alert-success    { .alert-styles(@alert-success-bg); color: @alert-success-text; }
-.alert-info       { .alert-styles(@alert-info-bg); color: @alert-info-text; }
-.alert-warning    { .alert-styles(@alert-warning-bg); color: @alert-warning-text; }
-.alert-danger     { .alert-styles(@alert-danger-bg); color: @alert-danger-text; }
+.alert-success    { .alert-styles(@alert-success-bg); }
+.alert-info       { .alert-styles(@alert-info-bg); }
+.alert-warning    { .alert-styles(@alert-warning-bg); }
+.alert-danger     { .alert-styles(@alert-danger-bg); }
 
 
 //
@@ -328,7 +217,6 @@ body {
 
 // Apply the mixin to the progress bars
 .progress-bar            { .progress-bar-styles(@progress-bar-bg); }
-.progress-bar-secondary    { .progress-bar-styles(@progress-bar-secondary-bg); }
 .progress-bar-success    { .progress-bar-styles(@progress-bar-success-bg); }
 .progress-bar-info       { .progress-bar-styles(@progress-bar-info-bg); }
 .progress-bar-warning    { .progress-bar-styles(@progress-bar-warning-bg); }
@@ -392,61 +280,67 @@ body {
 // --------------------------------------------------
 
 .well {
-  #gradient > .vertical(@start-color: darken(@well-bg, 3%); @end-color: @well-bg);
+  #gradient > .vertical(@start-color: darken(@well-bg, 5%); @end-color: @well-bg);
   border-color: darken(@well-bg, 10%);
   @shadow: inset 0 1px 3px rgba(0,0,0,.05), 0 1px 0 rgba(255,255,255,.1);
   .box-shadow(@shadow);
 }
 
 //
-// Jumbotron
+// Labels
 //
+.label-default { background: @btn-default-bg; color: @btn-default-color; }
+.label-primary { background: @btn-primary-bg; }
+.label-secondary { background: @btn-secondary-bg; }
+.label-success { background: @btn-success-bg; }
+.label-info    { background: @btn-info-bg; }
+.label-warning { background: @btn-warning-bg; }
+.label-danger  { background: @btn-danger-bg; }
 
-.jumbotron {
-  background: @jumbotron-bg;
-  border: 0px solid @jumbotron-border;
-  color: @jumbotron-color;
+
+//
+// Progress bars
+// --------------------------------------------------
+
+// Give the progress background some depth
+.progress {
+  #gradient > .vertical(@start-color: darken(@progress-bg, 4%); @end-color: @progress-bg)
 }
 
-//
-// Carousel
-//
-
-.carousel {
-  .item {
-    img {
-      width: 100%;
-    }
-  }
+// Mixin for generating new styles
+.progress-bar-styles(@color) {
+  #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 10%));
 }
+
+// Apply the mixin to the progress bars
+.progress-bar            { .progress-bar-styles(@progress-bar-bg); }
+.progress-bar-secondary    { .progress-bar-styles(@progress-bar-secondary-bg); }
+.progress-bar-success    { .progress-bar-styles(@progress-bar-success-bg); }
+.progress-bar-info       { .progress-bar-styles(@progress-bar-info-bg); }
+.progress-bar-warning    { .progress-bar-styles(@progress-bar-warning-bg); }
+.progress-bar-danger     { .progress-bar-styles(@progress-bar-danger-bg); }
+
+// Reset the striped class because our mixins don't do multiple gradients and
+// the above custom styles override the new `.progress-bar-striped` in v3.2.0.
+.progress-bar-striped {
+  #gradient > .striped();
+}
+
+
+
+//
+// Footer
+// --------------------------------------------------
 
 footer {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background: @color-purple-dark;
-  color: @color-purple-light;
-  .text-shadow(1px 1px 1px @color-purple-darkest);
+  background: @footer-bg;
+  color: @footer-color;
 
-  ul {
-    padding: 0;
+  a {
+    color: @footer-color;
 
-    li {
-      list-style: none;
-
-      a, 
-      a:hover, 
-      a:active {
-        color: @color-purple-2;
-      }
+    &:hover {
+      color: @footer-color-hover;
     }
-  }
-
-  .brand {
-    color: @color-purple-1;
-    border-top: 1px solid darken(@color-purple-1, 13%);
-    .box-shadow(0px 1px 0px @color-purple-darkest inset);
-    .text-shadow(1px 1px 1px @color-purple-darkest);
-    padding-top: 15px;
-
   }
 }

@@ -1,0 +1,120 @@
+
+@import "../bower_components/bootstrap/less/variables.less";
+
+@color-purple-dark: #3C3741;
+@color-purple-light: #953163;
+@color-pink-dark: #F5F1FF;
+@color-white: #FFFFFF;
+
+@color-blue-1: #006699;
+@color-blue-2: #3366CC;
+
+@brand-primary:         @color-purple-light;
+@brand-secondary:       @color-blue-1;
+@brand-success:         #5cb85c;
+@brand-info:            #5bc0de;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
+
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+@navbar-height:                    50px;
+@navbar-margin-bottom:             @line-height-computed;
+@navbar-border-radius:             @border-radius-base;
+@navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
+@navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
+@navbar-collapse-max-height:       340px;
+
+@navbar-default-color:             @color-pink-dark;
+@navbar-default-bg:                @color-purple-dark;
+@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+
+// Navbar links
+@navbar-default-link-color:                @color-pink-dark;
+@navbar-default-link-hover-color:          @color-white;
+@navbar-default-link-hover-bg:             transparent;
+@navbar-default-link-active-color:         @color-pink-dark;
+@navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-link-disabled-color:       #ccc;
+@navbar-default-link-disabled-bg:          transparent;
+
+// Navbar brand label
+@navbar-default-brand-color:               @navbar-default-link-color;
+@navbar-default-brand-hover-color:         darken(@navbar-default-brand-color, 3%);
+@navbar-default-brand-hover-bg:            transparent;
+
+// Navbar toggle
+@navbar-default-toggle-hover-bg:           #ddd;
+@navbar-default-toggle-icon-bar-bg:        #888;
+@navbar-default-toggle-border-color:       #ddd;
+
+
+//=== Inverted navbar
+// Reset inverted navbar basics
+@navbar-inverse-color:                      @color-purple-dark;
+@navbar-inverse-bg:                         @color-pink-dark;
+@navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
+
+// Inverted navbar links
+@navbar-inverse-link-color:                 @color-purple-dark;
+@navbar-inverse-link-hover-color:           @color-purple-light;
+@navbar-inverse-link-hover-bg:              transparent;
+@navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
+@navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 3%);
+@navbar-inverse-link-disabled-color:        #444;
+@navbar-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+@navbar-inverse-brand-color:                @navbar-inverse-link-color;
+@navbar-inverse-brand-hover-color:          @color-purple-light;
+@navbar-inverse-brand-hover-bg:             transparent;
+
+// Inverted navbar toggle
+@navbar-inverse-toggle-hover-bg:            #333;
+@navbar-inverse-toggle-icon-bar-bg:         #fff;
+@navbar-inverse-toggle-border-color:        #333;
+
+//== Buttons
+//
+//##
+
+@btn-secondary-color:            #ffffff;
+@btn-secondary-bg:               @brand-secondary;
+@btn-secondary-border:           darken(@brand-secondary, 13%);
+
+//== Labels
+//
+//##
+
+@label-secondary-bg:          @brand-secondary;
+
+//== Progress bars
+//
+//##
+
+@progress-bar-secondary-bg:   @brand-secondary;
+
+//== Panels
+//
+//##
+
+@panel-secondary-text:          #fff;
+@panel-secondary-border:        darken(@brand-secondary, 13%);
+@panel-secondary-heading-bg:    @brand-secondary;
+
+
+
+
+//== Footer
+//
+//##
+
+@footer-bg: 																@color-purple-dark;
+@footer-color: 															@color-pink-dark;
+@footer-color-hover: 												@color-white;
+@footer-padding-horizontal:        					floor((@grid-gutter-width / 2));
+@footer-padding-vertical:          					30px;
